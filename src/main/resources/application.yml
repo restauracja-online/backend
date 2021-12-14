@@ -1,2 +1,25 @@
-server:
-  port: 8080
+spring:
+  main:
+    allow-circular-references: true
+  server:
+    port: 8080
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      globally_quoted_identifiers: true
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      use-new-id-generator-mappings: true
+      storage_engine: innodb
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/restauracja
+    username: projekt1
+    password: lol123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
