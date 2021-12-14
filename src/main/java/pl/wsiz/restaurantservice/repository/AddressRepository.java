@@ -2,12 +2,12 @@ package pl.wsiz.restaurantservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.wsiz.restaurantservice.model.User;
+import pl.wsiz.restaurantservice.model.Address;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface AddressRepository extends JpaRepository<Address, Long> {
 
-    Optional<User> findByEmail(String email);
+    Optional<Address> findByUserId(Long userId);
 }
