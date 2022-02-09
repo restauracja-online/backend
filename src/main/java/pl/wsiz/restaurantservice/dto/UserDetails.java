@@ -1,10 +1,11 @@
-package pl.wsiz.restaurantservice.dto;
+package pl.wsiz.foodservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.wsiz.restaurantservice.model.Role;
+import pl.wsiz.foodservice.model.EntityStatus;
+import pl.wsiz.foodservice.model.Role;
 
 import java.util.Collection;
 
@@ -15,6 +16,7 @@ import java.util.Collection;
 public class UserDetails {
 
     private String email;
+    private EntityStatus status;
     private Role role;
     private Collection<AddressDetails> addresses;
 }

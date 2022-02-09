@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.dto.error;
+package pl.wsiz.foodservice.dto.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,4 +16,5 @@ public class Error {
     private int code;
     private String status;
     private Collection<ErrorMessage> messages;
+
 }

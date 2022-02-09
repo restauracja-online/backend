@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.model;
+package pl.wsiz.foodservice.model;
 
 public enum Role {
     ROLE_ADMIN, ROLE_USER

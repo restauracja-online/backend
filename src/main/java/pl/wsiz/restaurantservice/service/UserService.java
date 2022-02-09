@@ -1,18 +1,19 @@
-package pl.wsiz.restaurantservice.service;
+package pl.wsiz.foodservice.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.wsiz.restaurantservice.controller.request.AddressRequest;
-import pl.wsiz.restaurantservice.exception.UserException;
-import pl.wsiz.restaurantservice.exception.UserExistsException;
-import pl.wsiz.restaurantservice.model.Address;
-import pl.wsiz.restaurantservice.model.Role;
-import pl.wsiz.restaurantservice.model.User;
-import pl.wsiz.restaurantservice.repository.AddressRepository;
-import pl.wsiz.restaurantservice.repository.UserRepository;
+import pl.wsiz.foodservice.controller.model.AddressRequest;
+import pl.wsiz.foodservice.exception.UserException;
+import pl.wsiz.foodservice.exception.UserExistsException;
+import pl.wsiz.foodservice.model.Address;
+import pl.wsiz.foodservice.model.EntityStatus;
+import pl.wsiz.foodservice.model.Role;
+import pl.wsiz.foodservice.model.User;
+import pl.wsiz.foodservice.repository.AddressRepository;
+import pl.wsiz.foodservice.repository.UserRepository;
 
 import java.util.Optional;
 
@@ -24,6 +25,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final AddressRepository addressRepository;
 
+    @Autowired
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AddressRepository addressRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
@@ -55,6 +57,7 @@ public class UserService {
     public User createUser(User user) {
         validateUserExists(user.getEmail());
         user.setRole(Role.ROLE_USER);
+        user.setStatus(EntityStatus.ACTIVE);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         return save(user);
@@ -89,6 +92,7 @@ public class UserService {
         addressToSave.setBuildingNumber(addressRequest.getBuilding_number());
         addressToSave.setStreet(addressRequest.getStreet());
         addressToSave.setUser(user.get());
+        addressToSave.setStatus(EntityStatus.ACTIVE);
 
         this.addressRepository.save(addressToSave);
 

@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.exception;
+package pl.wsiz.foodservice.exception;
 
 public class UserException extends RuntimeException {
 

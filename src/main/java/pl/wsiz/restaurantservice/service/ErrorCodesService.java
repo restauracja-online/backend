@@ -1,7 +1,7 @@
-package pl.wsiz.restaurantservice.service;
+package pl.wsiz.foodservice.service;
 
 import lombok.extern.slf4j.Slf4j;
-import pl.wsiz.restaurantservice.ErrorCode;
+import pl.wsiz.foodservice.ErrorCode;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;

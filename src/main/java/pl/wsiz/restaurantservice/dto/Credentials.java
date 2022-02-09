@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.dto;
+package pl.wsiz.foodservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +10,8 @@ import javax.validation.constraints.Size;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Credentials {
 
     @Email

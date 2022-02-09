@@ -1,8 +1,8 @@
-package pl.wsiz.restaurantservice.repository;
+package pl.wsiz.foodservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.wsiz.restaurantservice.model.User;
+import pl.wsiz.foodservice.model.User;
 
 import java.util.Optional;
 

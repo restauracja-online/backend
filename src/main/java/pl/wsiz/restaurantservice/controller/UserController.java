@@ -1,15 +1,15 @@
-package pl.wsiz.restaurantservice.controller;
+package pl.wsiz.foodservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.wsiz.restaurantservice.controller.request.AddressRequest;
-import pl.wsiz.restaurantservice.dto.Converter;
-import pl.wsiz.restaurantservice.dto.UserDetails;
-import pl.wsiz.restaurantservice.model.User;
-import pl.wsiz.restaurantservice.service.UserService;
+import pl.wsiz.foodservice.controller.model.AddressRequest;
+import pl.wsiz.foodservice.dto.Converter;
+import pl.wsiz.foodservice.dto.UserDetails;
+import pl.wsiz.foodservice.model.User;
+import pl.wsiz.foodservice.service.UserService;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -37,4 +37,5 @@ public class UserController {
         User user = userService.addAddress(principal.getName(), addressRequest);
         return new ResponseEntity<>(Converter.userToUserDetails(user), HttpStatus.OK);
     }
+
 }

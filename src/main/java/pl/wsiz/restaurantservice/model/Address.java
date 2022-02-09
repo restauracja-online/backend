@@ -1,12 +1,11 @@
-package pl.wsiz.restaurantservice.model;
+package pl.wsiz.foodservice.model;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "address")
-public class Address {
-
+public class Address implements BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", unique = true, nullable = false)
@@ -19,6 +18,9 @@ public class Address {
     private String street;
     @Column(name = "building_number", nullable = false)
     private String buildingNumber;
+    @Column(name = "status", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EntityStatus status;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -64,6 +66,14 @@ public class Address {
         this.buildingNumber = buildingNumber;
     }
 
+    public EntityStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EntityStatus entityStatus) {
+        this.status = entityStatus;
+    }
+
     public User getUser() {
         return user;
     }
@@ -77,11 +87,15 @@ public class Address {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Address address = (Address) o;
-        return Objects.equals(id, address.id) && Objects.equals(city, address.city) && Objects.equals(zipCode, address.zipCode) && Objects.equals(street, address.street) && Objects.equals(buildingNumber, address.buildingNumber) && Objects.equals(user, address.user);
+        return Objects.equals(id, address.id)
+                && Objects.equals(city, address.city)
+                && Objects.equals(zipCode, address.zipCode)
+                && Objects.equals(street, address.street)
+                && Objects.equals(buildingNumber, address.buildingNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, city, zipCode, street, buildingNumber, user);
+        return Objects.hash(id, city, zipCode, street, buildingNumber);
     }
 }
