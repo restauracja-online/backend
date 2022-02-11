@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.configuration;
+package pl.wsiz.foodservice.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpHeaders;
@@ -10,10 +10,10 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import pl.wsiz.restaurantservice.ErrorCode;
-import pl.wsiz.restaurantservice.dto.error.ErrorMessage;
-import pl.wsiz.restaurantservice.service.ErrorCodesService;
-import pl.wsiz.restaurantservice.dto.error.Error;
+import pl.wsiz.foodservice.ErrorCode;
+import pl.wsiz.foodservice.dto.error.ErrorMessage;
+import pl.wsiz.foodservice.service.ErrorCodesService;
+import pl.wsiz.foodservice.dto.error.Error;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

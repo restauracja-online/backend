@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice;
+package pl.wsiz.foodservice;
 
 public enum ErrorCode {
 

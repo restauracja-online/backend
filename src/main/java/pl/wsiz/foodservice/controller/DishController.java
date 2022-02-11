@@ -12,7 +12,6 @@ import pl.wsiz.foodservice.service.DishService;
 import java.util.List;
 
 import static pl.wsiz.foodservice.dto.Converter.dishListToDishDtoList;
-import static pl.wsiz.foodservice.dto.Converter.dishToDishDto;
 
 @RestController
 @RequestMapping(value = "/api")

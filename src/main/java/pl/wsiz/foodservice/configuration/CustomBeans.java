@@ -1,4 +1,4 @@
-package pl.wsiz.restaurantservice.configuration;
+package pl.wsiz.foodservice.configuration;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
